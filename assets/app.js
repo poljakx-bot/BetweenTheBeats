@@ -1,0 +1,80 @@
+(()=>{
+ document.documentElement.classList.add('js-enabled');
+ const toggle=document.querySelector('.nav-toggle'), links=document.querySelector('.nav-links');
+ if(toggle&&links){
+  toggle.addEventListener('click',()=>{const open=links.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open))});
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('is-open');toggle.setAttribute('aria-expanded','false')}));
+ }
+ document.querySelectorAll('[data-tabs]').forEach(group=>{
+  const tabs=[...group.querySelectorAll('[role=tab]')];
+  const readAll=group.querySelector('[data-read-all]');
+  const panels=[...group.parentElement.querySelectorAll('[role=tabpanel]')];
+  const showAll=(updateHash=true)=>{
+   tabs.forEach(t=>{t.classList.remove('is-active');t.setAttribute('aria-selected','false');t.tabIndex=-1});
+   if(readAll)readAll.classList.add('is-active');
+   panels.forEach(p=>p.hidden=false);
+   if(updateHash&&history.replaceState)history.replaceState(null,'','#read-all');
+   if(window.MathJax?.typesetPromise)window.MathJax.typesetPromise(panels);
+  };
+  const activate=(tab,updateHash=true)=>{
+   if(readAll)readAll.classList.remove('is-active');
+   tabs.forEach(t=>{const on=t===tab;t.classList.toggle('is-active',on);t.setAttribute('aria-selected',String(on));t.tabIndex=on?0:-1});
+   const id=tab.getAttribute('aria-controls');
+   panels.forEach(p=>p.hidden=p.id!==id);
+   const panel=document.getElementById(id);
+   if(updateHash&&history.replaceState)history.replaceState(null,'',`#${id}`);
+   if(window.MathJax?.typesetPromise&&panel)window.MathJax.typesetPromise([panel]);
+  };
+  tabs.forEach((tab,i)=>{
+   tab.addEventListener('click',e=>{e.preventDefault();activate(tab)});
+   tab.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();let n=e.key==='Home'?0:e.key==='End'?tabs.length-1:e.key==='ArrowRight'?(i+1)%tabs.length:(i-1+tabs.length)%tabs.length;tabs[n].focus();activate(tabs[n])});
+  });
+  if(readAll)readAll.addEventListener('click',e=>{e.preventDefault();showAll()});
+  const hash=location.hash.replace('#','');
+  if(hash==='read-all')showAll(false);
+  else {const selected=tabs.find(t=>t.getAttribute('aria-controls')===hash)||tabs[0];if(selected)activate(selected,false)}
+ });
+
+ // Netlify Forms: submit asynchronously so an unrecognised form shows a useful
+ // message instead of navigating the visitor to a 404 page.
+ document.querySelectorAll('form').forEach(form=>{
+  const formName=form.querySelector('input[name="form-name"]');
+  if(!formName||String(form.method).toLowerCase()!=='post')return;
+  form.addEventListener('submit',async event=>{
+   event.preventDefault();
+   if(!form.reportValidity())return;
+   const button=form.querySelector('button[type="submit"]');
+   const originalLabel=button?button.textContent:'';
+   let status=form.querySelector('.form-status');
+   if(!status){
+    status=document.createElement('p');
+    status.className='form-status';
+    status.setAttribute('role','status');
+    status.setAttribute('aria-live','polite');
+    form.appendChild(status);
+   }
+   status.classList.remove('is-error','is-success');
+   status.textContent='Sending…';
+   form.setAttribute('aria-busy','true');
+   if(button){button.disabled=true;button.textContent='Sending…'}
+   try{
+    const response=await fetch('/',{
+     method:'POST',
+     headers:{'Content-Type':'application/x-www-form-urlencoded'},
+     body:new URLSearchParams(new FormData(form)).toString()
+    });
+    if(!response.ok)throw new Error(`Form submission returned ${response.status}`);
+    status.classList.add('is-success');
+    status.textContent='Received. Opening confirmation…';
+    const destination=form.getAttribute('action')||'/thanks/';
+    window.location.assign(destination);
+   }catch(error){
+    console.error(error);
+    status.classList.add('is-error');
+    status.textContent='The form could not be sent. Please try again after form handling is enabled, or use the contact link.';
+    form.removeAttribute('aria-busy');
+    if(button){button.disabled=false;button.textContent=originalLabel}
+   }
+  });
+ });
+})();

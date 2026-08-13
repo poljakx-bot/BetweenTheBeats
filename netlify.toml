@@ -1,0 +1,88 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[redirects]]
+  from = "/physics/book-one"
+  to = "/physics/book-one/"
+  status = 301
+[[redirects]]
+  from = "/physics/book-two"
+  to = "/physics/book-two/"
+  status = 301
+[[redirects]]
+  from = "/physics/book-three"
+  to = "/physics/book-three/"
+  status = 301
+
+
+
+[[redirects]]
+  from = "/physics/book-two/scar-in-the-signal/*"
+  to = "/physics/book-two/event-does-not-travel/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/physics/book-two/scar-in-the-signal"
+  to = "/physics/book-two/event-does-not-travel/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/physics/book-two/messenger-and-c/*"
+  to = "/physics/book-two/event-does-not-travel/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/physics/book-two/messenger-and-c"
+  to = "/physics/book-two/event-does-not-travel/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/trilogy"
+  to = "/trilogy/"
+  status = 301
+
+[[redirects]]
+  from = "/trilogy/excerpts/between-the-beats"
+  to = "/trilogy/excerpts/between-the-beats/"
+  status = 301
+
+[[redirects]]
+  from = "/trilogy/excerpts/speed-without-a-message"
+  to = "/trilogy/excerpts/speed-without-a-message/"
+  status = 301
+
+[[redirects]]
+  from = "/trilogy/excerpts/titraj"
+  to = "/trilogy/excerpts/titraj/"
+  status = 301
+
+[[redirects]]
+  from = "/why"
+  to = "/why/"
+  status = 301
+
+[[redirects]]
+  from = "/idea"
+  to = "/idea/"
+  status = 301
+
+[[redirects]]
+  from = "/notes"
+  to = "/notes/"
+  status = 301
+
+[[redirects]]
+  from = "/thanks"
+  to = "/thanks/"
+  status = 301
