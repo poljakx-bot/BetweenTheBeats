@@ -1,171 +1,197 @@
 <!DOCTYPE html>
-
-<html lang="en-GB"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Sound, Motion and the Perceived Wavelength | Physics Path II</title><meta content="A moving receiver perceives both a changed sound frequency and a corresponding wavelength, preserving the propagation speed while arrival rates change." name="description"/><meta content="Ned Fielder" name="author"/><meta content="#050b15" name="theme-color"/><link href="https://between-the-beats.netlify.app/physics/book-two/sound-motion-and-perceived-wavelength/" rel="canonical"/><meta content="Sound, Motion and the Perceived Wavelength | Physics Path II" property="og:title"/><meta content="A moving receiver perceives both a changed sound frequency and a corresponding wavelength, preserving the propagation speed while arrival rates change." property="og:description"/><meta content="article" property="og:type"/><meta content="https://between-the-beats.netlify.app/physics/book-two/sound-motion-and-perceived-wavelength/" property="og:url"/><meta content="https://between-the-beats.netlify.app/assets/speed-without-a-message-cover.webp" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><link href="/assets/mark.svg" rel="icon" type="image/svg+xml"/><link href="/assets/styles.css" rel="stylesheet"/><script>window.MathJax={tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"]]},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]}};</script><script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><nav aria-label="Primary navigation" class="nav"><a class="brand" href="/"><img alt="" height="20" src="/assets/mark.svg" width="36"/><span>Between the Beats</span></a><button aria-controls="nav-links" aria-expanded="false" class="nav-toggle" type="button">Menu</button><div class="nav-links" id="nav-links"><a href="/trilogy/">The Trilogy</a><a href="/idea/">Questions</a><a aria-current="page" href="/physics/">Physics</a><a href="/notes/">Notes</a><a href="/why/">Why?</a><a class="nav-secondary" href="/trilogy/#excerpts">Read</a><a class="nav-secondary" href="/#contact">Contact</a></div></nav></header><main id="main-content"><div class="shell">
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Sound, Motion and the Perceived Wavelength | Physics Path II</title>
+<meta content="Sound separates wave propagation, receiver-dependent message arrival and local reconstruction. A moving receiver changes both received cadence and the wavelength associated with successive local receptions." name="description"/>
+<meta content="Ned Fielder" name="author"/>
+<meta content="#050b15" name="theme-color"/>
+<link href="https://between-the-beats.netlify.app/physics/book-two/sound-motion-and-perceived-wavelength/" rel="canonical"/>
+<meta content="Sound, Motion and the Perceived Wavelength | Physics Path II" property="og:title"/>
+<meta content="Sound separates wave propagation, receiver-dependent message arrival and local reconstruction." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://between-the-beats.netlify.app/physics/book-two/sound-motion-and-perceived-wavelength/" property="og:url"/>
+<meta content="https://between-the-beats.netlify.app/assets/speed-without-a-message-cover.webp" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="/assets/mark.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/styles.css" rel="stylesheet"/>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"]]},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]}};</script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><nav aria-label="Primary navigation" class="nav"><a class="brand" href="/"><img alt="" height="20" src="/assets/mark.svg" width="36"/><span>Between the Beats</span></a><button aria-controls="nav-links" aria-expanded="false" class="nav-toggle" type="button">Menu</button><div class="nav-links" id="nav-links"><a href="/trilogy/">The Trilogy</a><a href="/idea/">Questions</a><a aria-current="page" href="/physics/">Physics</a><a href="/notes/">Notes</a><a href="/why/">Why?</a><a class="nav-secondary" href="/trilogy/#excerpts">Read</a><a class="nav-secondary" href="/#contact">Contact</a></div></nav></header>
+<main id="main-content"><div class="shell">
 <nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/physics/">Physics</a><span aria-hidden="true">›</span><a href="/physics/book-two/">Path II</a><span aria-hidden="true">›</span><span aria-current="page">Sound, Motion and the Perceived Wavelength</span></nav>
-<header class="topic-hero"><p class="topic-kicker">Path II · Theme 2</p><h1>Sound, Motion and the Perceived Wavelength</h1><p class="topic-intro">Receiver motion changes both the frequency and the wavelength physically perceived during reception; cₛ±u remains the arrival rate at a marked front.</p><span class="status-badge">Published essay</span></header>
+<header class="topic-hero"><p class="topic-kicker">Path II · Theme 2</p><h1>Sound, Motion and the Perceived Wavelength</h1><p class="topic-intro">Sound makes the distinction visible: wave speed, message arrival and the receiver’s local reconstruction are not one quantity.</p><span class="status-badge">Published essay</span></header>
 <div class="topic-layout"><article class="reading-column">
-<aside class="reading-framework">
-<p class="section-label">Four questions to keep separate</p>
-<h3>Measurement is not the same thing as its explanation.</h3>
-<p>As you read, keep four tasks distinct: the standard account; what the measurement directly establishes; the portal’s objection or alternative; and the evidence that could distinguish the two.</p>
-</aside>
-<div aria-label="Reading depth" class="depth-tabs" data-tabs="" role="tablist">
-<a aria-controls="intuition" aria-selected="true" class="depth-tab is-active" href="#intuition" role="tab">Intuition</a>
-<a aria-controls="argument" aria-selected="false" class="depth-tab" href="#argument" role="tab" tabindex="-1">The Argument</a>
-<a aria-controls="deep-notes" aria-selected="false" class="depth-tab" href="#deep-notes" role="tab" tabindex="-1">Deep Notes</a>
-<a class="depth-tab read-all-tab" data-read-all="" href="#read-all" id="read-all">Read all</a>
-</div>
+<aside class="reading-framework"><p class="section-label">Three quantities to keep separate</p><h3>The medium, the message and the receiver each define a different relation.</h3><p>The wave propagates through the medium at \(c_s\). A moving receiver meets a particular message at \(c_s\pm u\). From successive local receptions it may reconstruct a received frequency and a corresponding reception wavelength whose product is again \(c_s\). These statements answer different questions.</p></aside>
+<div aria-label="Reading depth" class="depth-tabs" data-tabs="" role="tablist"><a aria-controls="intuition" aria-selected="true" class="depth-tab is-active" href="#intuition" role="tab">Intuition</a><a aria-controls="argument" aria-selected="false" class="depth-tab" href="#argument" role="tab" tabindex="-1">The Argument</a><a aria-controls="deep-notes" aria-selected="false" class="depth-tab" href="#deep-notes" role="tab" tabindex="-1">Deep Notes</a><a class="depth-tab read-all-tab" data-read-all="" href="#read-all" id="read-all">Read all</a></div>
 <p class="depth-access-note">Each depth is written as a self-contained route. Choose one without needing to read the other two, or use Read all for a continuous article.</p>
 <section class="depth-panel" id="intuition" role="tabpanel"><h2>Intuition</h2>
-<p>Sound provides a controlled example because its propagation can be separated from the motion of both source and receiver.</p>
-<p>When a receiver moves, it does not merely register a changed frequency. It physically encounters a changed wavelength in its own sequence of reception. Here <strong>perceived</strong> is used in the operational physical sense: the wavelength encountered and registered by the moving receiver, not a subjective impression.</p>
-<p>The receiver’s motion changes frequency and perceived wavelength in inverse proportions:</p>
+<h3>Sound gives us a medium we can see in the equations</h3>
+<p>Let sound propagate through still air at speed \(c_s\). That is the wave-propagation rate defined by the medium.</p>
+<p>Now let a receiver move through the air. A marked pulse that chases a receding receiver closes the remaining distance at</p>
+<div class="equation">\[c_s-u.\]</div>
+<p>If the receiver moves towards the pulse, the distance closes at</p>
+<div class="equation">\[c_s+u.\]</div>
+<p>Those are message or arrival rates to that receiver. They do not require the sound wave itself to stop propagating through the air at \(c_s\).</p>
+<h3>A periodic wave adds a third question</h3>
+<p>A receiver does not only meet one marked pulse. It can register a sequence of equal-phase arrivals and measure their cadence. If the receiver moves away, the arrivals become less frequent; if it moves towards them, they become more frequent.</p>
+<p>Path II then asks a deliberately operational question: if the received frequency belongs to the moving receiver, what wavelength belongs to the same sequence of local reception events?</p>
+<p>Using the receiver’s displacement during one received period gives</p>
 <div class="equation">\[\boxed{f_R\lambda_R=c_s}.\]</div>
-<p>The speed <span class="inline-equation">(c_s)</span> remains the propagation speed of the sound wave. The quantities <span class="inline-equation">(c_s\pm u)</span> describe only how rapidly the receiver and a marked front approach one another.</p>
+<p>This is not the same statement as saying that one marked message reaches the moving receiver at \(c_s\). The message-arrival rate remains \(c_s\pm u\).</p>
+<div class="callout">Wave speed, message speed and the speed reconstructed from local periodic reception can coexist because they are defined by different event pairs.</div>
 </section>
 <section class="depth-panel" id="argument" role="tabpanel"><h2>The Argument</h2>
-<h3>A receiver moving with the sound</h3>
-<p>Let sound propagate through a stationary medium at speed <span class="inline-equation">\(c_s\)</span>. A stationary source produces frequency <span class="inline-equation">\(f_0\)</span> and medium-frame wavelength</p>
+<h3>1. Begin in the medium frame</h3>
+<p>Let a stationary source generate a periodic sound wave in a stationary medium. Its source frequency and medium-frame wavelength satisfy</p>
 <div class="equation">\[\lambda_0=\frac{c_s}{f_0}.\]</div>
-<p>Now let the receiver move in the same direction as the sound at speed <span class="inline-equation">\(u\)</span>. Let</p>
-<div class="equation">\[T_R=\frac{1}{f_R}\]</div>
-<p>be the time between two successive arrivals at that receiver. During this interval the receiver moves a real distance</p>
-<div class="equation">\[d_R=uT_R=\frac{u}{f_R}.\]</div>
-<p>At the first arrival, the next equal-phase front is one medium-frame wavelength <span class="inline-equation">\(\lambda_0\)</span> behind. Because the receiver continues moving away, that next front must cover the original separation plus the receiver's displacement:</p>
+<p>The wave propagates through the medium at</p>
+<div class="equation">\[v_{wave}=c_s.\]</div>
+<h3>2. A moving receiver changes the reception cadence</h3>
+<p>Let the receiver move in the same direction as the wave at speed \(u\). The time between two successive equal-phase arrivals at the receiver is \(T_R=1/f_R\).</p>
+<p>During that interval the receiver moves</p>
+<div class="equation">\[d_R=uT_R.\]</div>
+<p>The following front must cover the original spacing plus that new displacement:</p>
 <div class="equation">\[c_sT_R=\lambda_0+uT_R.\]</div>
 <p>Therefore</p>
 <div class="equation">\[(c_s-u)T_R=\lambda_0,\]</div>
-<div class="equation">\[T_R=\frac{\lambda_0}{c_s-u},\qquad f_R=\frac{c_s-u}{\lambda_0}=f_0\left(1-\frac{u}{c_s}\right).\]</div>
-<p>The perceived wavelength is now obtained from the same geometry. It is the original front spacing plus the distance travelled by the receiver between the two arrivals:</p>
-<div class="equation">\[\lambda_R=\lambda_0+d_R=\lambda_0+\frac{u}{f_R}.\]</div>
-<p>Multiplying by the received frequency gives</p>
-<div class="equation">\[f_R\lambda_R=f_R\lambda_0+u.\]</div>
-<p>But the arrival equation already gave</p>
-<div class="equation">\[f_R\lambda_0=c_s-u.\]</div>
+<div class="equation">\[f_R=\frac{c_s-u}{\lambda_0}=f_0\left(1-\frac{u}{c_s}\right).\]</div>
+<h3>3. Reconstruct the wavelength from the same reception events</h3>
+<p>The portal defines the <strong>reception wavelength</strong> \(\lambda_R\) as the propagation distance associated with those two successive local reception events. The first front is received, the receiver moves by \(d_R\), and the next front is received after traversing the original spacing plus that displacement:</p>
+<div class="equation">\[\lambda_R=\lambda_0+d_R=\lambda_0+uT_R.\]</div>
+<p>Using the arrival equation above,</p>
+<div class="equation">\[\lambda_R=c_sT_R=\frac{c_s}{f_R}.\]</div>
 <p>Hence</p>
-<div class="equation">\[\boxed{f_R\lambda_R=(c_s-u)+u=c_s}.\]</div>
-<p>Equivalently, substituting the received frequency into the geometric expression for wavelength gives</p>
-<div class="equation">\[\lambda_R=\lambda_0+u\frac{\lambda_0}{c_s-u}=\frac{c_s\lambda_0}{c_s-u}=\frac{\lambda_0}{1-u/c_s}.\]</div>
-<h3>A receiver moving towards the sound</h3>
-<p>Let <span class="inline-equation">\(u\)</span> now denote the positive magnitude of motion towards the arriving wave. During one received period the receiver moves towards the next front by</p>
-<div class="equation">\[d_R=uT_R=\frac{u}{f_R}.\]</div>
-<p>The next front therefore covers less than the original separation:</p>
+<div class="equation">\[\boxed{f_R\lambda_R=c_s}.\]</div>
+<h3>4. Approach gives the reciprocal result</h3>
+<p>If the receiver moves towards the arriving wave, the next front has less distance to cover:</p>
 <div class="equation">\[c_sT_R=\lambda_0-uT_R.\]</div>
-<p>Thus</p>
-<div class="equation">\[(c_s+u)T_R=\lambda_0,\qquad f_R=\frac{c_s+u}{\lambda_0}=f_0\left(1+\frac{u}{c_s}\right).\]</div>
-<p>The perceived wavelength is shortened by exactly the distance the receiver travels towards the arriving front:</p>
-<div class="equation">\[\lambda_R=\lambda_0-d_R=\lambda_0-\frac{u}{f_R}.\]</div>
 <p>Therefore</p>
-<div class="equation">\[f_R\lambda_R=f_R\lambda_0-u=(c_s+u)-u=c_s.\]</div>
+<div class="equation">\[f_R=f_0\left(1+\frac{u}{c_s}\right),\]</div>
+<p>while the reception wavelength is</p>
+<div class="equation">\[\lambda_R=\lambda_0-uT_R=\frac{c_s}{f_R}.\]</div>
+<p>Again,</p>
 <div class="equation">\[\boxed{f_R\lambda_R=c_s}.\]</div>
-<h3>Source and receiver both moving</h3>
-<p>Let the source move in the direction of propagation at speed <span class="inline-equation">\(v_S\)</span>. During one source period <span class="inline-equation">\(T_S=1/f_S\)</span>, the first front advances by <span class="inline-equation">\(c_sT_S\)</span> while the source advances by <span class="inline-equation">\(v_ST_S\)</span>. The spacing created ahead of the source is therefore</p>
+<h3>5. The message rate remains different</h3>
+<p>Now forget the periodic train and follow one marked pulse. If the receiver begins a distance \(L\) ahead and recedes at \(u\),</p>
+<div class="equation">\[c_st=L+ut.\]</div>
+<p>so</p>
+<div class="equation">\[t_{arr}=\frac{L}{c_s-u}.\]</div>
+<p>With the Path II definition</p>
+<div class="equation">\[v_{msg}=\frac{L}{t_{arr}},\]</div>
+<p>the message-arrival rate is</p>
+<div class="equation">\[\boxed{v_{msg}=c_s-u}.\]</div>
+<p>There is no contradiction with \(f_R\lambda_R=c_s\), because the first quantity follows one message from source separation to reception, while the second is reconstructed from a periodic sequence of local phase receptions.</p>
+<h3>6. Source and receiver motion in one geometry</h3>
+<p>If the source moves through the medium at \(v_S\), successive fronts are emitted from different positions. The spacing created ahead of the source is</p>
 <div class="equation">\[\lambda_M=(c_s-v_S)T_S=\frac{c_s-v_S}{f_S}.\]</div>
-<p>A receiver moving in the same direction at speed <span class="inline-equation">\(v_R\)</span> travels a distance <span class="inline-equation">\(v_RT_R\)</span> during one received period. The next front must cover the emitted spacing plus that displacement:</p>
+<p>If the receiver also moves in the same direction at \(v_R\), the next arrival satisfies</p>
 <div class="equation">\[c_sT_R=\lambda_M+v_RT_R.\]</div>
-<p>Hence</p>
-<div class="equation">\[f_R=\frac{c_s-v_R}{\lambda_M}=f_S\frac{c_s-v_R}{c_s-v_S}.\]</div>
-<p>The wavelength perceived by the moving receiver follows from the same encounter geometry:</p>
-<div class="equation">\[\lambda_R=\lambda_M+v_RT_R=\lambda_M+\frac{v_R}{f_R}.\]</div>
-<p>Multiplying gives</p>
-<div class="equation">\[f_R\lambda_R=f_R\lambda_M+v_R=(c_s-v_R)+v_R=c_s.\]</div>
+<p>Thus</p>
+<div class="equation">\[f_R=f_S\frac{c_s-v_R}{c_s-v_S}.\]</div>
+<p>The corresponding reception wavelength is</p>
+<div class="equation">\[\lambda_R=\lambda_M+v_RT_R,\]</div>
+<p>and therefore</p>
 <div class="equation">\[\boxed{f_R\lambda_R=c_s}.\]</div>
+<p>The source motion changes the spacing created during emission. The receiver motion changes the spatial interval associated with successive reception events. Both should be tracked explicitly instead of silently pairing quantities defined in different constructions.</p>
 </section>
 <section class="depth-panel" id="deep-notes" role="tabpanel"><h2>Deep Notes</h2>
-<p class="standalone-opening"><strong>This section is a complete technical presentation.</strong> It derives the perceived wavelength from the receiver's actual displacement between two successive arrivals. It does not begin by defining <span class="inline-equation">\(\lambda_R=c_sT_R\)</span>, because doing so would insert the desired result before it had been demonstrated.</p>
-<h3>1. Definitions and physical setup</h3>
-<p>Let the medium be at rest in coordinate system <span class="inline-equation">\(S\)</span>. Sound propagates through it at speed <span class="inline-equation">\(c_s\)</span>. A stationary source emits a periodic disturbance with period, frequency and medium-frame wavelength</p>
-<div class="equation">\[T_0=\frac{1}{f_0},\qquad \lambda_0=c_sT_0=\frac{c_s}{f_0}.\]</div>
-<p>The quantity <span class="inline-equation">\(\lambda_0\)</span> is the separation between successive equal-phase fronts for an observer at rest in the medium. Now introduce a receiver moving parallel to the wave. Its received period is</p>
-<div class="equation">\[T_R=\frac{1}{f_R}.\]</div>
-<p>During this measured interval the receiver travels a physical distance. That displacement is the missing geometrical term when one asks what wavelength the moving receiver actually encounters.</p>
-<p>Three quantities must remain distinct:</p>
-<ul><li><span class="inline-equation">\(c_s\)</span>: propagation speed of the sound disturbance through the medium;</li><li><span class="inline-equation">\(c_s\pm u\)</span>: closing rate between a labelled front and the moving receiver;</li><li><span class="inline-equation">\(\lambda_R\)</span>: wavelength perceived through the receiver's two successive local arrival events.</li></ul>
-<h3>2. Receiver moving away from the wave</h3>
-<p>Let the receiver move in the same direction as the wave with speed <span class="inline-equation">\(u&gt;0\)</span>. At the instant one front reaches it, the next equal-phase front is one medium-frame wavelength <span class="inline-equation">\(\lambda_0\)</span> behind.</p>
-<p>During the next received period <span class="inline-equation">\(T_R\)</span>, the receiver moves forward by</p>
-<div class="equation">\[d_R=uT_R=\frac{u}{f_R}.\]</div>
-<p>The following front therefore does not merely cross the original separation <span class="inline-equation">\(\lambda_0\)</span>. It must also cover the additional distance created by the receiver's motion. The meeting condition is</p>
-<div class="equation">\[c_sT_R=\lambda_0+d_R=\lambda_0+uT_R.\]</div>
-<p>Collecting the time terms gives</p>
-<div class="equation">\[(c_s-u)T_R=\lambda_0.\]</div>
-<p>Hence the received period and frequency are</p>
-<div class="equation">\[T_R=\frac{\lambda_0}{c_s-u},\]</div>
-<div class="equation">\[f_R=\frac{1}{T_R}=\frac{c_s-u}{\lambda_0}.\]</div>
-<p>Using <span class="inline-equation">\(\lambda_0=c_s/f_0\)</span>, this becomes the usual receiver Doppler result</p>
-<div class="equation">\[f_R=f_0\left(1-\frac{u}{c_s}\right).\]</div>
-<p>Now derive the perceived wavelength without using <span class="inline-equation">\(c_sT_R\)</span> as its definition. The moving receiver encounters the second front only after advancing by <span class="inline-equation">\(d_R\)</span>. The separation physically traversed between its two arrival events is therefore</p>
-<div class="equation">\[\lambda_R=\lambda_0+d_R.\]</div>
-<p>Since <span class="inline-equation">\(d_R=u/f_R\)</span>,</p>
-<div class="equation">\[\lambda_R=\lambda_0+\frac{u}{f_R}.\]</div>
-<p>Multiply by <span class="inline-equation">\(f_R\)</span>:</p>
-<div class="equation">\[f_R\lambda_R=f_R\lambda_0+u.\]</div>
-<p>The arrival equation gave</p>
+<h3>What is being compared?</h3>
+<p>Sound is useful because the medium gives an explicit propagation frame. Let the medium be at rest in coordinate system \(S\). A periodic disturbance propagates through it at speed \(c_s\). For a stationary source,</p>
+<div class="equation">\[T_0=\frac{1}{f_0},\qquad \lambda_0=c_sT_0.\]</div>
+<p>Now introduce a receiver moving parallel to the wave. Three different operational questions become available:</p>
+<div class="equation">\[\boxed{\text{How fast does the wave propagate through the medium?}}\]</div>
+<div class="equation">\[\boxed{\text{How fast does one marked message reach this moving receiver?}}\]</div>
+<div class="equation">\[\boxed{\text{What wave speed is reconstructed from successive local receptions?}}\]</div>
+<p>The central claim of this page is not that these answers must be numerically identical. It is that they must not be given the same name before the measurement procedure is specified.</p>
+<h3>Wave propagation through the medium</h3>
+<p>For a marked front,</p>
+<div class="equation">\[x_F(t)=x_F(0)+c_st.\]</div>
+<p>Therefore</p>
+<div class="equation">\[v_{wave}=c_s.\]</div>
+<p>This is the propagation speed relative to the medium.</p>
+<h3>One marked message to a moving receiver</h3>
+<p>Let a receiver start a distance \(L\) ahead and recede at speed \(u\):</p>
+<div class="equation">\[x_R(t)=L+ut.\]</div>
+<p>The arrival event satisfies</p>
+<div class="equation">\[c_st=L+ut.\]</div>
+<p>Hence</p>
+<div class="equation">\[t_{arr}=\frac{L}{c_s-u}.\]</div>
+<p>If message speed is defined by the initial source–receiver separation divided by arrival time,</p>
+<div class="equation">\[\boxed{v_{msg}=c_s-u}.\]</div>
+<p>For approach the sign reverses:</p>
+<div class="equation">\[\boxed{v_{msg}=c_s+u}.\]</div>
+<p>These are receiver-dependent arrival rates. They do not replace the medium-frame propagation speed \(c_s\).</p>
+<h3>Periodic reception and the received frequency</h3>
+<p>Now consider successive equal-phase fronts. At the instant one front reaches the receding receiver, the next front is one medium-frame wavelength \(\lambda_0\) behind. During the next received period \(T_R\), the receiver moves by</p>
+<div class="equation">\[d_R=uT_R.\]</div>
+<p>The following front must therefore propagate</p>
+<div class="equation">\[c_sT_R=\lambda_0+d_R.\]</div>
+<p>Substitution gives</p>
+<div class="equation">\[(c_s-u)T_R=\lambda_0,\]</div>
+<p>so the received frequency is</p>
+<div class="equation">\[f_R=\frac{c_s-u}{\lambda_0}.\]</div>
+<p>This is the usual moving-receiver Doppler cadence.</p>
+<h3>Two different wavelength constructions</h3>
+<p>A standard medium-frame description keeps \(\lambda_0\) as the simultaneous spatial separation of equal-phase fronts in the medium. With that convention,</p>
 <div class="equation">\[f_R\lambda_0=c_s-u.\]</div>
+<p>Path II asks a different operational question. The measured frequency \(f_R\) belongs to two successive reception events on the moving receiver’s history. What spatial interval belongs to those same two events?</p>
+<p>The receiver moves by \(uT_R\) between them, so the propagation distance associated with that reception interval is</p>
+<div class="equation">\[\lambda_R=\lambda_0+uT_R.\]</div>
+<p>Using the meeting condition,</p>
+<div class="equation">\[\lambda_R=c_sT_R.\]</div>
 <p>Therefore</p>
-<div class="equation">\[\boxed{f_R\lambda_R=(c_s-u)+u=c_s}.\]</div>
-<p>The inverse change of wavelength can also be written explicitly:</p>
-<div class="equation">\[\lambda_R=\lambda_0+u\frac{\lambda_0}{c_s-u},\]</div>
-<div class="equation">\[\lambda_R=\lambda_0\left(1+\frac{u}{c_s-u}\right),\]</div>
-<div class="equation">\[\boxed{\lambda_R=\frac{c_s\lambda_0}{c_s-u}=\frac{\lambda_0}{1-u/c_s}}.\]</div>
-<p>The receiver therefore records a lower frequency and a longer perceived wavelength. Both changes arise from the same motion and cancel in the wave-speed product.</p>
-<h3>3. Receiver moving towards the wave</h3>
-<p>Let <span class="inline-equation">\(u&gt;0\)</span> now denote the magnitude of motion towards the arriving fronts. During one received period the receiver moves towards the next front by</p>
-<div class="equation">\[d_R=uT_R=\frac{u}{f_R}.\]</div>
-<p>The following front now travels less than the original medium-frame separation:</p>
-<div class="equation">\[c_sT_R=\lambda_0-d_R=\lambda_0-uT_R.\]</div>
-<p>Thus</p>
-<div class="equation">\[(c_s+u)T_R=\lambda_0,\]</div>
-<div class="equation">\[T_R=\frac{\lambda_0}{c_s+u},\qquad f_R=\frac{c_s+u}{\lambda_0}=f_0\left(1+\frac{u}{c_s}\right).\]</div>
-<p>The perceived wavelength is shortened by the distance the receiver travels towards the next front:</p>
-<div class="equation">\[\lambda_R=\lambda_0-d_R=\lambda_0-\frac{u}{f_R}.\]</div>
-<p>Therefore</p>
-<div class="equation">\[f_R\lambda_R=f_R\lambda_0-u=(c_s+u)-u=c_s.\]</div>
 <div class="equation">\[\boxed{f_R\lambda_R=c_s}.\]</div>
-<p>Its explicit form is</p>
-<div class="equation">\[\boxed{\lambda_R=\frac{\lambda_0}{1+u/c_s}}.\]</div>
-<h3>4. Why the result is not assumed</h3>
-<p>The derivation does not start from <span class="inline-equation">\(\lambda_R=c_s/f_R\)</span> or <span class="inline-equation">\(\lambda_R=c_sT_R\)</span>. Either expression would force the product <span class="inline-equation">\(f_R\lambda_R\)</span> to equal <span class="inline-equation">\(c_s\)</span> by definition.</p>
-<p>Instead, it begins with two independently stated pieces of geometry:</p>
-<ul><li>the next front is initially separated by the medium-frame distance <span class="inline-equation">\(\lambda_0\)</span>;</li><li>the receiver moves by the measured distance <span class="inline-equation">\(d_R=u/f_R\)</span> between the two arrivals.</li></ul>
-<p>The perceived wavelength is then the original separation corrected by that actual receiver displacement:</p>
-<div class="equation">\[\lambda_R=\lambda_0\pm\frac{u}{f_R}.\]</div>
-<p>Only after this independent geometrical construction is the product evaluated.</p>
-<h3>5. Propagation speed and arrival rate</h3>
-<p>For the receiver moving away, retaining the medium-frame wavelength while using the receiver's changed frequency gives</p>
-<div class="equation">\[f_R\lambda_0=c_s-u.\]</div>
-<p>For motion towards the wave it gives</p>
-<div class="equation">\[f_R\lambda_0=c_s+u.\]</div>
-<p>These are not new propagation speeds of sound. They are closing rates between a labelled front and a moving receiver. They arise because a temporal quantity measured by the receiver is being paired with a spatial separation held fixed in the medium frame.</p>
-<p>When the receiver's displacement is included in the wavelength it physically encounters, the distinction becomes</p>
-<div class="equation">\[\boxed{c_s\pm u=\text{arrival rate at a labelled front}},\]</div>
-<div class="equation">\[\boxed{c_s=f_R\lambda_R=\text{propagation speed reconstructed from the received wave}}.\]</div>
-<h3>6. Moving source: creation of the front spacing</h3>
-<p>Let the source move in the propagation direction at speed <span class="inline-equation">\(v_S\)</span> and emit with period <span class="inline-equation">\(T_S=1/f_S\)</span>. During one source period, the earlier front advances by <span class="inline-equation">\(c_sT_S\)</span>, while the source itself advances by <span class="inline-equation">\(v_ST_S\)</span>. The spacing created ahead of the source is</p>
-<div class="equation">\[\lambda_M=(c_s-v_S)T_S=\frac{c_s-v_S}{f_S}.\]</div>
-<p>Behind the source the spacing is <span class="inline-equation">\((c_s+v_S)/f_S\)</span>. Source motion changes where successive fronts are generated. Receiver motion changes how a previously generated sequence is encountered.</p>
-<h3>7. Source and receiver moving in the same direction</h3>
-<p>Let a receiver move in the propagation direction at speed <span class="inline-equation">\(v_R\)</span>. At one arrival, the next front is separated by <span class="inline-equation">\(\lambda_M\)</span>. During the received period <span class="inline-equation">\(T_R\)</span>, the receiver advances by <span class="inline-equation">\(v_RT_R\)</span>. The next front must therefore satisfy</p>
+<p>The disagreement is therefore not algebraic. It is about which spatial quantity should be paired operationally with the receiver-measured frequency.</p>
+<h3>Why the distinction matters</h3>
+<p>The product</p>
+<div class="equation">\[f_R\lambda_0=c_s-u\]</div>
+<p>combines a frequency defined by the moving receiver with a wavelength defined as simultaneous front spacing in the medium frame. The portal asks whether that mixed construction should be described as the receiver’s measured wave speed.</p>
+<p>The alternative reconstruction pairs quantities generated by the same reception interval:</p>
+<div class="equation">\[f_R=\frac{1}{T_R},\qquad \lambda_R=c_sT_R,\]</div>
+<p>giving</p>
+<div class="equation">\[f_R\lambda_R=c_s.\]</div>
+<p>This does not make the message-arrival rate \(c_s\). It only keeps local periodic reconstruction separate from source-to-receiver transport.</p>
+<h3>The two-sensor time-of-flight test</h3>
+<p>Place two sensors a fixed distance \(L\) apart on a vehicle moving at speed \(u\) through the medium. Let one marked sound pulse pass the rear sensor and then chase the front sensor.</p>
+<p>During the transit time \(t\), the pulse moves through the medium by \(c_st\), while the front sensor moves by \(ut\). The meeting condition is</p>
+<div class="equation">\[c_st=L+ut.\]</div>
+<p>Thus</p>
+<div class="equation">\[t=\frac{L}{c_s-u}\]</div>
+<p>and the vehicle’s two-sensor time-of-flight ratio is</p>
+<div class="equation">\[\frac{L}{t}=c_s-u.\]</div>
+<p>This experiment measures message transit between two moving locations. It is not the same operation as reconstructing \(f_R\lambda_R\) from a periodic sequence at one receiver. The fact that the two procedures return different rates is the point: they answer different questions.</p>
+<h3>Source motion and receiver motion</h3>
+<p>For a source moving at \(v_S\), the medium-frame spacing generated ahead of it is</p>
+<div class="equation">\[\lambda_M=\frac{c_s-v_S}{f_S}.\]</div>
+<p>For a receiver moving at \(v_R\) in the same direction,</p>
 <div class="equation">\[c_sT_R=\lambda_M+v_RT_R.\]</div>
 <p>Hence</p>
-<div class="equation">\[(c_s-v_R)T_R=\lambda_M,\]</div>
-<div class="equation">\[f_R=\frac{c_s-v_R}{\lambda_M}=f_S\frac{c_s-v_R}{c_s-v_S}.\]</div>
-<p>The receiver-perceived wavelength is obtained geometrically:</p>
-<div class="equation">\[\lambda_R=\lambda_M+v_RT_R=\lambda_M+\frac{v_R}{f_R}.\]</div>
-<p>Therefore</p>
-<div class="equation">\[f_R\lambda_R=f_R\lambda_M+v_R=(c_s-v_R)+v_R=c_s.\]</div>
+<div class="equation">\[f_R=f_S\frac{c_s-v_R}{c_s-v_S}.\]</div>
+<p>Using the same reception-event construction,</p>
+<div class="equation">\[\lambda_R=\lambda_M+v_RT_R,\]</div>
+<p>so</p>
 <div class="equation">\[\boxed{f_R\lambda_R=c_s}.\]</div>
-<h3>8. What “perceived” means</h3>
-<p><em>Perceived</em> is used in a physical, operational sense. It does not refer to a subjective auditory impression. It denotes the wavelength physically encountered and registered through two successive arrival events by a receiver that changes position between those events.</p>
-<p>The receiver does not invent a new wavelength by definition. Its motion changes the geometrical separation that the next front must traverse before the next local arrival can occur.</p>
-<h3>9. Result and scope</h3>
-<p>The medium-frame wavelength <span class="inline-equation">\(\lambda_0\)</span> remains a valid description of front spacing in the rest frame of the medium. The claim is that it cannot be paired with a moving receiver's frequency and then called that receiver's measured wavelength without omitting the receiver's displacement between arrivals.</p>
-<p>Once that displacement is included, frequency and perceived wavelength change together, while their product retains the propagation speed:</p>
-<div class="equation">\[\boxed{f_R\lambda_R=c_s}.\]</div>
+<p>This formulation treats source and receiver motion through the same event geometry rather than changing the wave description for one while freezing it for the other.</p>
+<h3>Why this matters for the light argument</h3>
+<p>The sound example is not offered as proof that light has a material medium. Its purpose is conceptual. It shows that three quantities can coexist without contradiction:</p>
+<div class="equation">\[\boxed{\text{wave propagation rate}}\]</div>
+<div class="equation">\[\boxed{\text{message arrival rate to a moving receiver}}\]</div>
+<div class="equation">\[\boxed{\text{speed reconstructed by a chosen local wave measurement}}\]</div>
+<p>Path II then asks whether discussions of light and synchronization preserve the same distinction, or whether the invariant local value \(c\) is silently promoted into a universal statement about message arrival between arbitrary moving endpoints.</p>
+<h3>What is and is not claimed</h3>
+<p>The derivation does not dispute that sound propagates through a stationary medium at \(c_s\). It does not claim that a marked pulse has a time-of-flight speed \(c_s\) between two sensors moving through that medium. That experiment gives \(c_s\pm u\).</p>
+<p>The narrower claim is that a periodic receiver can define a reception wavelength from the same reception interval that defines its received period, and that this construction yields \(f_R\lambda_R=c_s\). The physical disagreement with the textbook convention lies in what is meant by “the wavelength measured by the moving receiver”.</p>
+<section aria-labelledby="refs-sound-motion" class="further-reading"><h3 id="refs-sound-motion">Further reading</h3><ul><li><a href="https://www.grc.nasa.gov/www/k-12/airplane/doppler.html" rel="noopener noreferrer" target="_blank">NASA Glenn Research Center, “Doppler Effect”</a></li></ul></section>
 </section>
-<aside class="novel-connection"><h2>Connection to the novel</h2><p>Jan uses sound not as an analogy that must be discarded before light, but as a diagnostic case. It separates propagation from collision with a front and forces frequency and perceived wavelength to be treated as one physical measurement.</p><p>Once that is done, invariance is no longer unique to light.</p></aside>
-<nav aria-label="Topic navigation" class="topic-pager">
-<a class="pager-link prev" href="/physics/book-two/light-speed-and-arrival-speed/"><small>Previous</small><strong>← Light Speed Is Not Arrival Speed</strong></a>
-<a class="pager-link next" href="/physics/book-two/einstein-synchronization/"><small>Next topic</small><strong>Einstein Synchronization: What Is Measured and What Is Assigned →</strong></a>
-</nav>
-</article><aside aria-label="Themes in this path" class="topic-aside"><h2>Path II themes</h2><a href="/physics/book-two/light-speed-and-arrival-speed/">1. Light Speed Is Not Arrival Speed</a><a aria-current="page" href="/physics/book-two/sound-motion-and-perceived-wavelength/">2. Sound, Motion and the Perceived Wavelength</a><a href="/physics/book-two/einstein-synchronization/">3. Einstein Synchronization: What Is Measured and What Is Assigned</a><a href="/physics/book-two/train-argument/">4. What the Train Argument Actually Establishes</a><a href="/physics/book-two/clock-has-not-aged-by-seeing/">5. The Clock Has Not Aged by Seeing</a><a href="/physics/book-two/wrong-problem/">6. The Wrong Problem</a></aside></div></div></main><footer class="site-footer"><nav aria-label="Footer navigation" class="footer-nav"><a href="/why/">Why?</a><a href="/trilogy/">The Trilogy</a><a href="/idea/">Questions</a><a href="/physics/">Physics</a><a href="/notes/">Notes</a><a href="/trilogy/#excerpts">Read</a><a href="/notes/#support">Support</a><a href="/#contact">Contact</a></nav><div class="footer-meta"><p>© 2026 Ned Fielder. All rights reserved.</p><p>Last updated July 22, 2026</p></div></footer><script src="/assets/app.js"></script></body></html>
+<aside class="novel-connection"><h2>Connection to the novel</h2><p>The sound calculation is Jan’s control experiment. It separates a wave’s propagation through its environment from the receiver-dependent journey of a message and from the quantity reconstructed after reception.</p><p>The same vocabulary is then carried into the light argument rather than assuming from the start that all three uses of “speed” are identical.</p></aside>
+<nav aria-label="Topic navigation" class="topic-pager"><a class="pager-link prev" href="/physics/book-two/light-speed-and-arrival-speed/"><small>Previous topic</small><strong>← Light Speed Is Not Arrival Speed</strong></a><a class="pager-link next" href="/physics/book-two/einstein-synchronization/"><small>Next topic</small><strong>Einstein Synchronization: What Is Measured and What Is Assigned →</strong></a></nav>
+</article><aside aria-label="Themes in this path" class="topic-aside"><h2>Path II themes</h2><a href="/physics/book-two/light-speed-and-arrival-speed/">1. Light Speed Is Not Arrival Speed</a><a aria-current="page" href="/physics/book-two/sound-motion-and-perceived-wavelength/">2. Sound, Motion and the Perceived Wavelength</a><a href="/physics/book-two/einstein-synchronization/">3. Einstein Synchronization: What Is Measured and What Is Assigned</a><a href="/physics/book-two/train-argument/">4. What the Train Argument Actually Establishes</a><a href="/physics/book-two/clock-has-not-aged-by-seeing/">5. The Clock Has Not Aged by Seeing</a><a href="/physics/book-two/wrong-problem/">6. The Wrong Problem</a></aside></div></div></main>
+<footer class="site-footer"><nav aria-label="Footer navigation" class="footer-nav"><a href="/why/">Why?</a><a href="/trilogy/">The Trilogy</a><a href="/idea/">Questions</a><a href="/physics/">Physics</a><a href="/notes/">Notes</a><a href="/trilogy/#excerpts">Read</a><a href="/notes/#support">Support</a><a href="/#contact">Contact</a></nav><div class="footer-meta"><p>© 2026 Ned Fielder. All rights reserved.</p><p>Last updated August 14, 2026</p></div></footer>
+<script src="/assets/app.js"></script>
+</body>
+</html>
