@@ -35,6 +35,45 @@
   }
  }
 
+ const pathTwoThemes=[
+  ['/physics/book-two/light-speed-and-arrival-speed/','Propagation Speed Is Not Encounter Rate'],
+  ['/physics/book-two/einstein-synchronization/','Einstein Synchronization: What Is Measured and What Is Assigned'],
+  ['/physics/book-two/train-argument/','What the Train Argument Actually Establishes'],
+  ['/physics/book-two/clock-has-not-aged-by-seeing/','The Clock Has Not Aged by Seeing'],
+  ['/physics/book-two/wrong-problem/','The Wrong Problem']
+ ];
+ if(location.pathname.startsWith('/physics/book-two/')&&location.pathname!=='/physics/book-two/'&&location.pathname!=='/physics/book-two/sound-motion-and-perceived-wavelength/'){
+  const aside=document.querySelector('.topic-aside');
+  if(aside){
+   const heading=aside.querySelector('h2')||document.createElement('h2');
+   heading.textContent='Path II themes';
+   aside.replaceChildren(heading);
+   pathTwoThemes.forEach(([href,label])=>{
+    const link=document.createElement('a');
+    link.href=href;
+    link.textContent=label;
+    if(location.pathname===href)link.setAttribute('aria-current','page');
+    aside.appendChild(link);
+   });
+  }
+  if(location.pathname==='/physics/book-two/light-speed-and-arrival-speed/'){
+   const next=document.querySelector('.topic-pager .pager-link.next');
+   if(next){
+    next.href='/physics/book-two/einstein-synchronization/';
+    const strong=next.querySelector('strong');
+    if(strong)strong.textContent='Einstein Synchronization: What Is Measured and What Is Assigned →';
+   }
+  }
+  if(location.pathname==='/physics/book-two/einstein-synchronization/'){
+   const prev=document.querySelector('.topic-pager .pager-link.prev');
+   if(prev){
+    prev.href='/physics/book-two/light-speed-and-arrival-speed/';
+    const strong=prev.querySelector('strong');
+    if(strong)strong.textContent='← Propagation Speed Is Not Encounter Rate';
+   }
+  }
+ }
+
  const toggle=document.querySelector('.nav-toggle'), links=document.querySelector('.nav-links');
  if(toggle&&links){
   toggle.addEventListener('click',()=>{const open=links.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open))});
