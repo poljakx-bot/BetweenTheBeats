@@ -1,6 +1,52 @@
 (()=>{
  document.documentElement.classList.add('js-enabled');
 
+ // Runtime UX refinements. These intentionally change presentation and reading
+ // order only; the underlying scientific content remains unchanged.
+ const uxStyle=document.createElement('style');
+ uxStyle.textContent=`
+  @media(max-width:900px){
+   .topic-aside{display:flex!important;position:static!important;order:-1;align-items:center;gap:.45rem;overflow-x:auto;padding:.65rem;margin:0 0 .25rem;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain}
+   .topic-aside h2{display:none}
+   .topic-aside a{display:inline-flex;flex:0 0 auto;align-items:center;max-width:260px;padding:.5rem .72rem;border:1px solid var(--line);border-radius:999px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;scroll-snap-align:start}
+   .topic-aside a[aria-current=page]{color:var(--text);border-color:var(--cyan);background:rgba(121,224,228,.09)}
+  }
+  @media(max-width:720px){
+   .section{padding:3.1rem 0}
+   .topic-layout{padding-top:1rem}
+   .breadcrumb>span{display:none}
+   .reading-framework{width:100%;margin:0 0 1rem;padding:1rem}
+   .depth-tabs{position:sticky;top:66px;z-index:30;flex-wrap:nowrap;overflow-x:auto;margin:0 -14px 1.3rem;padding:.55rem 14px;background:rgba(5,11,21,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+   .depth-tabs::-webkit-scrollbar{display:none}
+   .depth-tab{flex:0 0 auto!important;white-space:nowrap}
+   .depth-choice{min-height:0}
+   .reading-depths .utility-card{min-height:0}
+  }
+  @media(max-width:440px){
+   .cover-stack{height:250px;width:260px}
+   .cover-stack img{width:125px}
+   .cover-stack .cover-one{top:34px}
+   .cover-stack .cover-two{left:68px}
+   .cover-stack .cover-three{top:42px}
+  }
+ `;
+ document.head.appendChild(uxStyle);
+
+ // On the landing page answer "what is this?" before asking visitors to read
+ // the project's origin story. This is especially important on a narrow screen.
+ if(location.pathname==='/'){
+  const why=document.querySelector('#why');
+  const central=document.querySelector('.central-question');
+  const depthSection=central?.nextElementSibling;
+  if(why&&depthSection&&why.parentElement===depthSection.parentElement)depthSection.after(why);
+ }
+
+ // "Published essay" can sound like a journal-publication claim to a first-time
+ // reader. These are essays published inside the companion, so label them that way.
+ document.querySelectorAll('.status-badge').forEach(badge=>{
+  if(badge.textContent.trim().toLowerCase()==='published essay')badge.textContent='Companion essay';
+ });
+
  // Keep the Path I topic rail in one canonical sequence. This also repairs
  // older cached/static topic pages without reintroducing fixed numbering.
  const pathOneThemes=[
@@ -76,8 +122,11 @@
 
  const toggle=document.querySelector('.nav-toggle'), links=document.querySelector('.nav-links');
  if(toggle&&links){
+  const closeNav=()=>{links.classList.remove('is-open');toggle.setAttribute('aria-expanded','false')};
   toggle.addEventListener('click',()=>{const open=links.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open))});
-  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('is-open');toggle.setAttribute('aria-expanded','false')}));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeNav));
+  document.addEventListener('keydown',event=>{if(event.key==='Escape')closeNav()});
+  document.addEventListener('click',event=>{if(links.classList.contains('is-open')&&!links.contains(event.target)&&!toggle.contains(event.target))closeNav()});
  }
  document.querySelectorAll('[data-tabs]').forEach(group=>{
   const tabs=[...group.querySelectorAll('[role=tab]')];
