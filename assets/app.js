@@ -7,11 +7,13 @@
  uxStyle.textContent=`
   @media(max-width:900px){
    .topic-aside{display:flex!important;position:static!important;order:-1;align-items:center;gap:.45rem;overflow-x:auto;padding:.65rem;margin:0 0 .25rem;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain}
+   .topic-aside::before{content:'Path';flex:0 0 auto;color:var(--faint);font-size:.66rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;padding:0 .15rem}
    .topic-aside h2{display:none}
    .topic-aside a{display:inline-flex;flex:0 0 auto;align-items:center;max-width:260px;padding:.5rem .72rem;border:1px solid var(--line);border-radius:999px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;scroll-snap-align:start}
    .topic-aside a[aria-current=page]{color:var(--text);border-color:var(--cyan);background:rgba(121,224,228,.09)}
   }
   @media(max-width:720px){
+   html{scroll-padding-top:132px}
    .section{padding:3.1rem 0}
    .topic-layout{padding-top:1rem}
    .breadcrumb>span{display:none}
@@ -19,6 +21,7 @@
    .depth-tabs{position:sticky;top:66px;z-index:30;flex-wrap:nowrap;overflow-x:auto;margin:0 -14px 1.3rem;padding:.55rem 14px;background:rgba(5,11,21,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);scrollbar-width:none;-webkit-overflow-scrolling:touch}
    .depth-tabs::-webkit-scrollbar{display:none}
    .depth-tab{flex:0 0 auto!important;white-space:nowrap}
+   .depth-panel{scroll-margin-top:132px}
    .depth-choice{min-height:0}
    .reading-depths .utility-card{min-height:0}
   }
@@ -120,6 +123,13 @@
   }
  }
 
+ // Keep the active topic visible in the mobile horizontal path rail.
+ const pathRail=document.querySelector('.topic-aside');
+ const currentTopic=pathRail?.querySelector('[aria-current=page]');
+ if(pathRail&&currentTopic&&matchMedia('(max-width:900px)').matches){
+  requestAnimationFrame(()=>{pathRail.scrollLeft=Math.max(0,currentTopic.offsetLeft-(pathRail.clientWidth-currentTopic.clientWidth)/2)});
+ }
+
  const toggle=document.querySelector('.nav-toggle'), links=document.querySelector('.nav-links');
  if(toggle&&links){
   const closeNav=()=>{links.classList.remove('is-open');toggle.setAttribute('aria-expanded','false')};
@@ -132,9 +142,13 @@
   const tabs=[...group.querySelectorAll('[role=tab]')];
   const readAll=group.querySelector('[data-read-all]');
   const panels=[...group.parentElement.querySelectorAll('[role=tabpanel]')];
+  const keepTabVisible=tab=>{
+   if(!tab||!matchMedia('(max-width:720px)').matches)return;
+   requestAnimationFrame(()=>{group.scrollLeft=Math.max(0,tab.offsetLeft-(group.clientWidth-tab.clientWidth)/2)});
+  };
   const showAll=(updateHash=true)=>{
    tabs.forEach(t=>{t.classList.remove('is-active');t.setAttribute('aria-selected','false');t.tabIndex=-1});
-   if(readAll)readAll.classList.add('is-active');
+   if(readAll){readAll.classList.add('is-active');keepTabVisible(readAll)}
    panels.forEach(p=>p.hidden=false);
    if(updateHash&&history.replaceState)history.replaceState(null,'','#read-all');
    if(window.MathJax?.typesetPromise)window.MathJax.typesetPromise(panels);
@@ -145,6 +159,7 @@
    const id=tab.getAttribute('aria-controls');
    panels.forEach(p=>p.hidden=p.id!==id);
    const panel=document.getElementById(id);
+   keepTabVisible(tab);
    if(updateHash&&history.replaceState)history.replaceState(null,'',`#${id}`);
    if(window.MathJax?.typesetPromise&&panel)window.MathJax.typesetPromise([panel]);
   };
