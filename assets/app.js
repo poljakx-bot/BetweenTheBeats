@@ -1,8 +1,6 @@
 (()=>{
  document.documentElement.classList.add('js-enabled');
 
- // Runtime UX refinements. These intentionally change presentation and reading
- // order only; the underlying scientific content remains unchanged.
  const uxStyle=document.createElement('style');
  uxStyle.textContent=`
   @media(max-width:900px){
@@ -142,7 +140,8 @@
   ['/physics/book-three/absorption-emission-and-escape/','Absorption, Emission and Escape'],
   ['/physics/book-three/what-is-titraj/','What Is Titraj?'],
   ['/physics/book-three/receiver-scale-across-spectrum/','Prediction: Receiver Scale Across the Spectrum'],
-  ['/physics/book-three/harmonics-as-geometry-test/','Prediction: Harmonics as a Geometry Test']
+  ['/physics/book-three/harmonics-as-geometry-test/','Prediction: Harmonics as a Geometry Test'],
+  ['/physics/book-three/frequency-and-intensity-do-different-jobs/','Prediction: Frequency and Intensity Do Different Jobs']
  ];
  if(location.pathname.startsWith('/physics/book-three/')&&location.pathname!=='/physics/book-three/'){
   const aside=document.querySelector('.topic-aside');
@@ -176,6 +175,16 @@
     const strong=next.querySelector('strong');
     if(small)small.textContent='Next prediction';
     if(strong)strong.textContent='Harmonics as a Geometry Test →';
+   }
+  }
+  if(location.pathname==='/physics/book-three/harmonics-as-geometry-test/'){
+   const next=document.querySelector('.topic-pager .pager-link.next');
+   if(next){
+    next.href='/physics/book-three/frequency-and-intensity-do-different-jobs/';
+    const small=next.querySelector('small');
+    const strong=next.querySelector('strong');
+    if(small)small.textContent='Next prediction';
+    if(strong)strong.textContent='Frequency and Intensity Do Different Jobs →';
    }
   }
  }
