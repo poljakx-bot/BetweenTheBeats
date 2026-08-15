@@ -147,7 +147,7 @@
   ['/physics/book-three/photoelectric-without-impact-picture/','The Photoelectric Effect Without the Impact Picture'],
   ['/physics/book-three/absorption-emission-and-escape/','Absorption, Emission and Escape'],
   ['/physics/book-three/what-is-titraj/','What Is Titraj?'],
-  ['/physics/book-three/receiver-scale-across-spectrum/','Receiver Scale Across the Spectrum']
+  ['/physics/book-three/receiver-scale-across-spectrum/','Prediction: Receiver Scale Across the Spectrum']
  ];
  if(location.pathname.startsWith('/physics/book-three/')&&location.pathname!=='/physics/book-three/'){
   const aside=document.querySelector('.topic-aside');
