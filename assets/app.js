@@ -140,6 +140,41 @@
   }
  }
 
+ const pathThreeThemes=[
+  ['/physics/book-three/one-spectrum-many-nouns/','One Spectrum, Many Nouns'],
+  ['/physics/book-three/electron-as-receiver/','The Electron as Receiver'],
+  ['/physics/book-three/no-electron-responds-alone/','No Electron Responds Alone'],
+  ['/physics/book-three/photoelectric-without-impact-picture/','The Photoelectric Effect Without the Impact Picture'],
+  ['/physics/book-three/absorption-emission-and-escape/','Absorption, Emission and Escape'],
+  ['/physics/book-three/what-is-titraj/','What Is Titraj?'],
+  ['/physics/book-three/receiver-scale-across-spectrum/','Receiver Scale Across the Spectrum']
+ ];
+ if(location.pathname.startsWith('/physics/book-three/')&&location.pathname!=='/physics/book-three/'){
+  const aside=document.querySelector('.topic-aside');
+  if(aside){
+   const heading=aside.querySelector('h2')||document.createElement('h2');
+   heading.textContent='Path III themes';
+   aside.replaceChildren(heading);
+   pathThreeThemes.forEach(([href,label])=>{
+    const link=document.createElement('a');
+    link.href=href;
+    link.textContent=label;
+    if(location.pathname===href)link.setAttribute('aria-current','page');
+    aside.appendChild(link);
+   });
+  }
+  if(location.pathname==='/physics/book-three/what-is-titraj/'){
+   const next=document.querySelector('.topic-pager .pager-link.next');
+   if(next){
+    next.href='/physics/book-three/receiver-scale-across-spectrum/';
+    const small=next.querySelector('small');
+    const strong=next.querySelector('strong');
+    if(small)small.textContent='Next: phenomenon & prediction';
+    if(strong)strong.textContent='Receiver Scale Across the Spectrum →';
+   }
+  }
+ }
+
  // Keep the active topic visible in the mobile horizontal path rail.
  const pathRail=document.querySelector('.topic-aside');
  const currentTopic=pathRail?.querySelector('[aria-current=page]');
