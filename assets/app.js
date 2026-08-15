@@ -89,6 +89,7 @@
   ['/physics/book-two/einstein-synchronization/','Einstein Synchronization: What Is Measured and What Is Assigned'],
   ['/physics/book-two/train-argument/','What the Train Argument Actually Establishes'],
   ['/physics/book-two/clock-has-not-aged-by-seeing/','The Clock Has Not Aged by Seeing'],
+  ['/physics/book-two/what-doppler-cancellation-leaves-behind/','What Doppler Cancellation Leaves Behind'],
   ['/physics/book-two/wrong-problem/','The Wrong Problem']
  ];
  if(location.pathname.startsWith('/physics/book-two/')&&location.pathname!=='/physics/book-two/'&&location.pathname!=='/physics/book-two/sound-motion-and-perceived-wavelength/'){
@@ -119,6 +120,22 @@
     prev.href='/physics/book-two/light-speed-and-arrival-speed/';
     const strong=prev.querySelector('strong');
     if(strong)strong.textContent='← Propagation Speed Is Not Encounter Rate';
+   }
+  }
+  if(location.pathname==='/physics/book-two/clock-has-not-aged-by-seeing/'){
+   const next=document.querySelector('.topic-pager .pager-link.next');
+   if(next){
+    next.href='/physics/book-two/what-doppler-cancellation-leaves-behind/';
+    const strong=next.querySelector('strong');
+    if(strong)strong.textContent='What Doppler Cancellation Leaves Behind →';
+   }
+  }
+  if(location.pathname==='/physics/book-two/wrong-problem/'){
+   const prev=document.querySelector('.topic-pager .pager-link.prev');
+   if(prev){
+    prev.href='/physics/book-two/what-doppler-cancellation-leaves-behind/';
+    const strong=prev.querySelector('strong');
+    if(strong)strong.textContent='← What Doppler Cancellation Leaves Behind';
    }
   }
  }
