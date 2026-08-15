@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<urlset xmlns="http://www.sitemaps.org/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://between-the-beats.netlify.app/</loc><lastmod>2026-08-15</lastmod></url>
 <url><loc>https://between-the-beats.netlify.app/idea/</loc><lastmod>2026-08-15</lastmod></url>
 <url><loc>https://between-the-beats.netlify.app/physics/</loc><lastmod>2026-08-15</lastmod></url>
@@ -12,7 +12,6 @@
 <url><loc>https://between-the-beats.netlify.app/physics/book-one/soft-horizon/</loc><lastmod>2026-08-15</lastmod></url>
 <url><loc>https://between-the-beats.netlify.app/physics/book-two/</loc><lastmod>2026-08-15</lastmod></url>
 <url><loc>https://between-the-beats.netlify.app/physics/book-two/light-speed-and-arrival-speed/</loc><lastmod>2026-08-15</lastmod></url>
-<url><loc>https://between-the-beats.netlify.app/physics/book-two/sound-motion-and-perceived-wavelength/</loc><lastmod>2026-08-15</lastmod></url>
 <url><loc>https://between-the-beats.netlify.app/physics/book-two/einstein-synchronization/</loc><lastmod>2026-08-15</lastmod></url>
 <url><loc>https://between-the-beats.netlify.app/physics/book-two/train-argument/</loc><lastmod>2026-08-15</lastmod></url>
 <url><loc>https://between-the-beats.netlify.app/physics/book-two/clock-has-not-aged-by-seeing/</loc><lastmod>2026-08-15</lastmod></url>
