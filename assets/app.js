@@ -35,8 +35,6 @@
  `;
  document.head.appendChild(uxStyle);
 
- // On the landing page answer "what is this?" before asking visitors to read
- // the project's origin story. This is especially important on a narrow screen.
  if(location.pathname==='/'){
   const why=document.querySelector('#why');
   const central=document.querySelector('.central-question');
@@ -44,14 +42,10 @@
   if(why&&depthSection&&why.parentElement===depthSection.parentElement)depthSection.after(why);
  }
 
- // "Published essay" can sound like a journal-publication claim to a first-time
- // reader. These are essays published inside the companion, so label them that way.
  document.querySelectorAll('.status-badge').forEach(badge=>{
   if(badge.textContent.trim().toLowerCase()==='published essay')badge.textContent='Companion essay';
  });
 
- // Keep the Path I topic rail in one canonical sequence. This also repairs
- // older cached/static topic pages without reintroducing fixed numbering.
  const pathOneThemes=[
   ['/physics/book-one/what-do-we-actually-observe/','What Do We Actually Observe?'],
   ['/physics/book-one/universe-as-propagation-channel/','The Universe as a Propagation Channel'],
@@ -147,7 +141,8 @@
   ['/physics/book-three/photoelectric-without-impact-picture/','The Photoelectric Effect Without the Impact Picture'],
   ['/physics/book-three/absorption-emission-and-escape/','Absorption, Emission and Escape'],
   ['/physics/book-three/what-is-titraj/','What Is Titraj?'],
-  ['/physics/book-three/receiver-scale-across-spectrum/','Prediction: Receiver Scale Across the Spectrum']
+  ['/physics/book-three/receiver-scale-across-spectrum/','Prediction: Receiver Scale Across the Spectrum'],
+  ['/physics/book-three/harmonics-as-geometry-test/','Prediction: Harmonics as a Geometry Test']
  ];
  if(location.pathname.startsWith('/physics/book-three/')&&location.pathname!=='/physics/book-three/'){
   const aside=document.querySelector('.topic-aside');
@@ -173,9 +168,18 @@
     if(strong)strong.textContent='Receiver Scale Across the Spectrum →';
    }
   }
+  if(location.pathname==='/physics/book-three/receiver-scale-across-spectrum/'){
+   const next=document.querySelector('.topic-pager .pager-link.next');
+   if(next){
+    next.href='/physics/book-three/harmonics-as-geometry-test/';
+    const small=next.querySelector('small');
+    const strong=next.querySelector('strong');
+    if(small)small.textContent='Next prediction';
+    if(strong)strong.textContent='Harmonics as a Geometry Test →';
+   }
+  }
  }
 
- // Keep the active topic visible in the mobile horizontal path rail.
  const pathRail=document.querySelector('.topic-aside');
  const currentTopic=pathRail?.querySelector('[aria-current=page]');
  if(pathRail&&currentTopic&&matchMedia('(max-width:900px)').matches){
@@ -225,8 +229,6 @@
   else {const selected=tabs.find(t=>t.getAttribute('aria-controls')===hash)||tabs[0];if(selected)activate(selected,false)}
  });
 
- // Netlify Forms: submit asynchronously so an unrecognised form shows a useful
- // message instead of navigating the visitor to a 404 page.
  document.querySelectorAll('form').forEach(form=>{
   const formName=form.querySelector('input[name="form-name"]');
   if(!formName||String(form.method).toLowerCase()!=='post')return;
