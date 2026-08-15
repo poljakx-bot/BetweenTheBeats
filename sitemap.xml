@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/sitemap/0.9">
 <url><loc>https://between-the-beats.netlify.app/</loc><lastmod>2026-08-15</lastmod></url>
 <url><loc>https://between-the-beats.netlify.app/idea/</loc><lastmod>2026-08-15</lastmod></url>
 <url><loc>https://between-the-beats.netlify.app/physics/</loc><lastmod>2026-08-15</lastmod></url>
@@ -28,6 +28,6 @@
 <url><loc>https://between-the-beats.netlify.app/trilogy/excerpts/between-the-beats/</loc><lastmod>2026-07-22</lastmod></url>
 <url><loc>https://between-the-beats.netlify.app/trilogy/excerpts/speed-without-a-message/</loc><lastmod>2026-07-22</lastmod></url>
 <url><loc>https://between-the-beats.netlify.app/trilogy/excerpts/titraj/</loc><lastmod>2026-07-22</lastmod></url>
-<url><loc>https://between-the-beats.netlify.app/notes/</loc><lastmod>2026-07-22</lastmod></url>
+<url><loc>https://between-the-beats.netlify.app/notes/</loc><lastmod>2026-08-15</lastmod></url>
 <url><loc>https://between-the-beats.netlify.app/why/</loc><lastmod>2026-08-15</lastmod></url>
 </urlset>
