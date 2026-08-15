@@ -1,6 +1,40 @@
 (()=>{
  document.documentElement.classList.add('js-enabled');
 
+ // Keep the Path I topic rail in one canonical sequence. This also repairs
+ // older cached/static topic pages without reintroducing fixed numbering.
+ const pathOneThemes=[
+  ['/physics/book-one/what-do-we-actually-observe/','What Do We Actually Observe?'],
+  ['/physics/book-one/universe-as-propagation-channel/','The Universe as a Propagation Channel'],
+  ['/physics/book-one/redshift-source-or-signal-history/','Redshift and the Propagation Channel'],
+  ['/physics/book-one/supernova-duration-and-signal-shape/','Supernova Duration and the Shape of the Signal'],
+  ['/physics/book-one/cmb-propagation-response/','The CMB: Relic Signal or Propagation Response?'],
+  ['/physics/book-one/soft-horizon/','The Soft Horizon: The Edge of Knowing']
+ ];
+ if(location.pathname.startsWith('/physics/book-one/')&&location.pathname!=='/physics/book-one/'){
+  const aside=document.querySelector('.topic-aside');
+  if(aside){
+   const heading=aside.querySelector('h2')||document.createElement('h2');
+   heading.textContent='Path I themes';
+   aside.replaceChildren(heading);
+   pathOneThemes.forEach(([href,label])=>{
+    const link=document.createElement('a');
+    link.href=href;
+    link.textContent=label;
+    if(location.pathname===href)link.setAttribute('aria-current','page');
+    aside.appendChild(link);
+   });
+  }
+  if(location.pathname==='/physics/book-one/supernova-duration-and-signal-shape/'){
+   const next=document.querySelector('.topic-pager .pager-link.next');
+   if(next){
+    next.href='/physics/book-one/cmb-propagation-response/';
+    const strong=next.querySelector('strong');
+    if(strong)strong.textContent='The CMB: Relic Signal or Propagation Response? →';
+   }
+  }
+ }
+
  const toggle=document.querySelector('.nav-toggle'), links=document.querySelector('.nav-links');
  if(toggle&&links){
   toggle.addEventListener('click',()=>{const open=links.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open))});
