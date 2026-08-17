@@ -9,6 +9,18 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
 [[redirects]]
+  from = "/physics/further-hypotheses/*"
+  to = "/physics/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/physics/further-hypotheses"
+  to = "/physics/"
+  status = 302
+  force = true
+
+[[redirects]]
   from = "/physics/book-one"
   to = "/physics/book-one/"
   status = 301
@@ -20,8 +32,6 @@
   from = "/physics/book-three"
   to = "/physics/book-three/"
   status = 301
-
-
 
 [[redirects]]
   from = "/physics/book-two/scar-in-the-signal/*"
