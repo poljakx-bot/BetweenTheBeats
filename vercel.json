@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/physics/further-hypotheses",
+      "destination": "/physics/",
+      "permanent": false
+    },
+    {
+      "source": "/physics/further-hypotheses/:path*",
+      "destination": "/physics/",
+      "permanent": false
+    }
+  ]
+}
